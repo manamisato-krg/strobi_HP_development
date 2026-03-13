@@ -5,6 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>strobi Inc. | Contact</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 全幅バナー用スタイル */
+        .full-width-banner {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            height: 250px;
+            background-color: #a7d8de;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .full-width-banner h2 {
+            color: #fff;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+            margin: 0;
+        }
+
+        /* お問い合わせフォーム用スタイル */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto 5rem auto;
+            background-color: #f9f9f9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #1a365d;
+        }
+
+        .required-mark {
+            color: #d32f2f;
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+            font-weight: normal;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0277bd;
+            box-shadow: 0 0 0 2px rgba(2, 119, 189, 0.2);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: #0277bd;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #01579b;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,41 +112,55 @@
             <p><a href="toppage.html" style="color: #2b6cb0; text-decoration: none;">Home</a> / Contact</p>
         </section>
 
-        <section id="contact-form-section">
-            <h2>お問い合わせ</h2>
-            <p>お問い合わせやご依頼は、お気軽に以下のフォームからご連絡ください。一週間以内に返信いたします。</p>
+        <section id="contact-overview">
+            <div class="full-width-banner">
+                <h2>お問い合わせ</h2>
+            </div>
             
-            <form action="#" method="post" style="max-width: 600px; margin: 2rem auto 0; display: flex; flex-direction: column; gap: 1.5rem;">
-                <div>
-                    <label for="name" style="display: block; margin-bottom: 0.5rem; color: #0277bd; font-weight: bold;">お名前 (必須)</label>
-                    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border: 1px solid rgba(129, 212, 250, 0.5); border-radius: 4px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.8); font-size: 1rem; color: #1a365d;">
-                </div>
-
-                <div>
-                    <label for="email" style="display: block; margin-bottom: 0.5rem; color: #0277bd; font-weight: bold;">メールアドレス (必須)</label>
-                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border: 1px solid rgba(129, 212, 250, 0.5); border-radius: 4px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.8); font-size: 1rem; color: #1a365d;">
-                </div>
-
-                <div>
-                    <label for="subject" style="display: block; margin-bottom: 0.5rem; color: #0277bd; font-weight: bold;">件名</label>
-                    <input type="text" id="subject" name="subject" style="width: 100%; padding: 0.8rem; border: 1px solid rgba(129, 212, 250, 0.5); border-radius: 4px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.8); font-size: 1rem; color: #1a365d;">
-                </div>
-
-                <div>
-                    <label for="message" style="display: block; margin-bottom: 0.5rem; color: #0277bd; font-weight: bold;">お問い合わせ内容 (必須)</label>
-                    <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.8rem; border: 1px solid rgba(129, 212, 250, 0.5); border-radius: 4px; box-sizing: border-box; background-color: rgba(255, 255, 255, 0.8); font-size: 1rem; color: #1a365d; resize: vertical;"></textarea>
-                </div>
-
-                <div style="text-align: center; margin-top: 1rem;">
-                    <button type="submit" class="button" style="border: none; cursor: pointer; width: 200px; font-size: 1rem;">送信する</button>
-                </div>
-            </form>
+            <div style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    事業に関するお問い合わせ、共同開発やユーザーテストのご相談など、<br>お気軽にご連絡ください。通常、数営業日以内に返信いたします。
+                </p>
+            </div>
         </section>
+
+        <form action="#" method="post" class="contact-form">
+            
+            <div class="form-group">
+                <label for="name">氏名 <span class="required-mark">※必須</span></label>
+                <input type="text" id="name" name="name" required placeholder="例：海洋 太郎">
+            </div>
+
+            <div class="form-group">
+                <label for="affiliation">ご所属 <span class="required-mark">※必須</span></label>
+                <input type="text" id="affiliation" name="affiliation" required placeholder="例：株式会社○○ / ○○大学">
+            </div>
+
+            <div class="form-group">
+                <label for="email">メールアドレス <span class="required-mark">※必須</span></label>
+                <input type="email" id="email" name="email" required placeholder="例：kurage@gmail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">電話番号</label>
+                <input type="tel" id="phone" name="phone" placeholder="例：03-1234-5678">
+            </div>
+
+            <div class="form-group">
+                <label for="message">お問い合わせ内容 <span class="required-mark">※必須</span></label>
+                <textarea id="message" name="message" rows="8" required placeholder="お問い合わせ内容をご記入ください。"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">送信する</button>
+
+        </form>
+
     </main>
 
     <footer>
         <nav>
             <ul class="footer-links">
+                <li><a href="toppage.html">Home</a></li>
                 <li><a href="service.html">Service</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="jellyfish.html">About Jellyfish</a></li>
