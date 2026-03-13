@@ -5,6 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>strobi Inc. | News</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 全幅バナー用スタイル */
+        .full-width-banner {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            height: 250px;
+            background-color: #a7d8de;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .full-width-banner h2 {
+            color: #fff;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+            margin: 0;
+        }
+
+        /* フィルターボタン（タブ）のスタイル */
+        .filter-container {
+            text-align: center;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: #fff;
+            border: 2px solid #0277bd;
+            color: #0277bd;
+            padding: 0.6rem 2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #e1f5fe;
+        }
+
+        .filter-btn.active {
+            background-color: #0277bd;
+            color: #fff;
+        }
+
+        /* ニュースカードのグリッドスタイル */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .news-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .news-img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .news-date {
+            color: #666;
+        }
+
+        .news-tag {
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .tag-notice {
+            background-color: #e1f5fe;
+            color: #0277bd;
+        }
+
+        .tag-press {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+
+        .news-title {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #1a365d;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,17 +158,120 @@
             <p><a href="toppage.html" style="color: #2b6cb0; text-decoration: none;">Home</a> / News</p>
         </section>
 
-        <section id="news-list-page">
-            <h2>すべてのニュース</h2>
-            <ul class="news-list">
-                <li>
-                    <span class="date">2026.03.01</span> <span class="tag">#お知らせ</span>
-                    <h3>くらげクラフトが、「VOIX Biz」に掲載されました</h3>
-                    <p>株式会社VOIXが運営する、ビジネスの最新情報をお届けするWebメディア「VOIX Biz」にくらげクラフトが掲載されました。丁寧にリリ...</p>
-                </li>
-                <li>
-                    <span class="date">2026.03.01</span> <span class="tag">#お知らせ</span>
-                    <h3>くらげクラフト発売のリリースが、サステナビリティ情報を紹介するWEBメディア cokiに掲載されました</h3>
-                    <p>株式会社Saccoが運営する、法人のサステナビリティ情報を紹介するWEBメディアサイト「coki」に、"100億円の厄介者が「美酒」に化...</p>
-                </li>
-                <li>
+        <section id="news-overview">
+            <div class="full-width-banner">
+                <h2>News</h2>
+            </div>
+        </section>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">すべて</button>
+            <button class="filter-btn" data-filter="notice">お知らせ</button>
+            <button class="filter-btn" data-filter="press">プレスリリース</button>
+        </div>
+
+        <div class="news-grid" id="news-grid">
+            
+            <a href="#" class="news-card" data-category="notice">
+                <div class="news-img-placeholder">[画像]</div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="news-date">2026.03.13</span>
+                        <span class="news-tag tag-notice">お知らせ</span>
+                    </div>
+                    <h3 class="news-title">コーポレートサイトをリニューアルしました</h3>
+                </div>
+            </a>
+
+            <a href="#" class="news-card" data-category="press">
+                <div class="news-img-placeholder">[画像]</div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="news-date">2026.03.11</span>
+                        <span class="news-tag tag-press">プレスリリース</span>
+                    </div>
+                    <h3 class="news-title">第8回国際クラゲ発生シンポジウムにて「くらげクラフト」に関するポスター発表決定</h3>
+                </div>
+            </a>
+
+            <a href="#" class="news-card" data-category="notice">
+                <div class="news-img-placeholder">[画像]</div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="news-date">2026.03.07</span>
+                        <span class="news-tag tag-notice">お知らせ</span>
+                    </div>
+                    <h3 class="news-title">社名変更および本店移転のお知らせ</h3>
+                </div>
+            </a>
+
+            <a href="#" class="news-card" data-category="press">
+                <div class="news-img-placeholder">[画像]</div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="news-date">2026.02.19</span>
+                        <span class="news-tag tag-press">プレスリリース</span>
+                    </div>
+                    <h3 class="news-title">クラゲ大量発生予測ツール「クラゲみえるくん」のクローズドテストを開始</h3>
+                </div>
+            </a>
+
+            <a href="#" class="news-card" data-category="notice">
+                <div class="news-img-placeholder">[画像]</div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="news-date">2025.12.04</span>
+                        <span class="news-tag tag-notice">お知らせ</span>
+                    </div>
+                    <h3 class="news-title">創業に関するインタビュー記事が掲載されました</h3>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="toppage.html">Home</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="jellyfish.html">About Jellyfish</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; strobi Inc.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.news-card');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // 全ボタンのactiveクラスを外す
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    // クリックされたボタンにactiveクラスを付ける
+                    button.classList.add('active');
+
+                    // クリックされたボタンのフィルター属性を取得
+                    const filterValue = button.getAttribute('data-filter');
+
+                    // 各カードの表示・非表示を切り替え
+                    cards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
