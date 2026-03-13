@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>strobi Inc. | Photography</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Photography ギャラリー用スタイル（2列グリッド） */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .photo-item {
+            width: 100%;
+            aspect-ratio: 4/3; /* 写真の縦横比 */
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px; /* 少し角を丸くして見栄えを調整（不要であれば削除可） */
+        }
+
+        /* 全幅バナー用スタイル */
+        .full-width-banner {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            height: 250px;
+            background-color: #a7d8de;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .full-width-banner h2 {
+            color: #fff;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -29,8 +68,8 @@
         </section>
 
         <section id="photography-overview">
-            <div class="placeholder-image" style="width: 100vw; margin-left: calc(50% - 50vw); height: 250px; background-color: #a7d8de; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
-                <h2 style="color: #fff; font-size: 2rem; letter-spacing: 2px; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">偏愛クラゲ写真館</h2>
+            <div class="full-width-banner">
+                <h2>偏愛クラゲ写真館</h2>
             </div>
             
             <div style="text-align: center; margin-bottom: 5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
@@ -43,34 +82,18 @@
             </div>
         </section>
 
-        <section style="margin-bottom: 5rem;">
-            <h2 style="border-bottom: 2px solid #0277bd; padding-bottom: 0.5rem; margin-bottom: 1rem;">水族館のクラゲたち</h2>
-            <p style="margin-bottom: 2rem; line-height: 1.8;">水族館の展示水槽で泳ぐクラゲたちの姿です。</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 1]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 2]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 3]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 4]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 5]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 6]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 7]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 8]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 9]</div>
-            </div>
-        </section>
 
         <section style="margin-bottom: 5rem;">
             <h2 style="border-bottom: 2px solid #0277bd; padding-bottom: 0.5rem; margin-bottom: 1rem;">野生のクラゲたち</h2>
             <p style="margin-bottom: 2rem; line-height: 1.8;">フィールドワークで出会った、ありのままのクラゲたちの姿です。</p>
             
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 10]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 11]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 12]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 13]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 14]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 15]</div>
+            <div class="photo-gallery">
+                <div class="photo-item">[写真 10]</div>
+                <div class="photo-item">[写真 11]</div>
+                <div class="photo-item">[写真 12]</div>
+                <div class="photo-item">[写真 13]</div>
+                <div class="photo-item">[写真 14]</div>
+                <div class="photo-item">[写真 15]</div>
             </div>
         </section>
 
@@ -78,21 +101,10 @@
             <h2 style="border-bottom: 2px solid #0277bd; padding-bottom: 0.5rem; margin-bottom: 1rem;">クラゲの生活史</h2>
             <p style="margin-bottom: 2rem; line-height: 1.8;">クラゲは、ポリプと呼ばれるイソギンチャクのような形から、私たちがよく知る形へと姿を変えます。その不思議な一生を記録しました。</p>
             
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 16]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 17]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 18]</div>
-            </div>
-        </section>
-
-        <section style="margin-bottom: 5rem;">
-            <h2 style="border-bottom: 2px solid #0277bd; padding-bottom: 0.5rem; margin-bottom: 1rem;">研究風景</h2>
-            <p style="margin-bottom: 2rem; line-height: 1.8;">顕微鏡越しのミクロな世界から、クラゲの不思議に迫ります。</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 19]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 20]</div>
-                <div class="placeholder-image" style="width: 100%; aspect-ratio: 4/3; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">[写真 21]</div>
+            <div class="photo-gallery">
+                <div class="photo-item">[写真 16]</div>
+                <div class="photo-item">[写真 17]</div>
+                <div class="photo-item">[写真 18]</div>
             </div>
         </section>
 
