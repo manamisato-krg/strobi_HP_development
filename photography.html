@@ -14,14 +14,36 @@
             margin-bottom: 2rem;
         }
 
-        .photo-item {
+        /* 画像とテキストをまとめるコンテナ */
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-placeholder {
             width: 100%;
             aspect-ratio: 4/3; /* 写真の縦横比 */
             background-color: #e0e0e0;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 4px; /* 少し角を丸くして見栄えを調整（不要であれば削除可） */
+            border-radius: 4px;
+        }
+
+        /* クラゲの名前（大きめのフォント） */
+        .photo-title {
+            font-size: 1.3rem;
+            color: #1a365d;
+            margin: 1rem 0 0.4rem 0;
+            font-weight: bold;
+        }
+
+        /* クラゲの説明文（小さめのフォント） */
+        .photo-desc {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* 全幅バナー用スタイル */
@@ -82,18 +104,41 @@
             </div>
         </section>
 
-
         <section style="margin-bottom: 5rem;">
             <h2 style="border-bottom: 2px solid #0277bd; padding-bottom: 0.5rem; margin-bottom: 1rem;">野生のクラゲたち</h2>
             <p style="margin-bottom: 2rem; line-height: 1.8;">フィールドワークで出会った、ありのままのクラゲたちの姿です。</p>
             
             <div class="photo-gallery">
-                <div class="photo-item">[写真 10]</div>
-                <div class="photo-item">[写真 11]</div>
-                <div class="photo-item">[写真 12]</div>
-                <div class="photo-item">[写真 13]</div>
-                <div class="photo-item">[写真 14]</div>
-                <div class="photo-item">[写真 15]</div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 10]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 11]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 12]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 13]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 14]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 15]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
             </div>
         </section>
 
@@ -102,9 +147,21 @@
             <p style="margin-bottom: 2rem; line-height: 1.8;">クラゲは、ポリプと呼ばれるイソギンチャクのような形から、私たちがよく知る形へと姿を変えます。その不思議な一生を記録しました。</p>
             
             <div class="photo-gallery">
-                <div class="photo-item">[写真 16]</div>
-                <div class="photo-item">[写真 17]</div>
-                <div class="photo-item">[写真 18]</div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 16]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 17]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">[写真 18]</div>
+                    <h3 class="photo-title">クラゲの名前</h3>
+                    <p class="photo-desc">ここにクラゲの説明文が入ります。生態や撮影時のエピソードなどを記載してください。</p>
+                </div>
             </div>
         </section>
 
