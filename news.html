@@ -6,7 +6,6 @@
     <title>strobi Inc. | News</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 全幅バナー用スタイル */
         .full-width-banner {
             width: 100vw;
             margin-left: calc(50% - 50vw);
@@ -26,7 +25,6 @@
             margin: 0;
         }
 
-        /* フィルターボタン（タブ）のスタイル */
         .filter-container {
             text-align: center;
             margin-bottom: 3rem;
@@ -57,13 +55,12 @@
             color: #fff;
         }
 
-        /* ニュースカードのグリッドスタイル（横3列に固定し、広がりすぎを防止） */
         .news-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            max-width: 1100px; /* 画面端までパンパンになるのを防ぐ */
-            margin: 0 auto 5rem auto; /* 中央寄せ */
+            max-width: 1100px; 
+            margin: 0 auto 5rem auto; 
         }
 
         .news-card {
@@ -254,15 +251,11 @@
 
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // 全ボタンのactiveクラスを外す
                     buttons.forEach(btn => btn.classList.remove('active'));
-                    // クリックされたボタンにactiveクラスを付ける
                     button.classList.add('active');
 
-                    // クリックされたボタンのフィルター属性を取得
                     const filterValue = button.getAttribute('data-filter');
 
-                    // 各カードの表示・非表示を切り替え
                     cards.forEach(card => {
                         if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                             card.style.display = 'block';
