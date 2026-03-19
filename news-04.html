@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社名変更および本店移転のお知らせ| strobi Inc.</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .news-detail {
+            max-width: 800px;
+            margin: 0 auto 5rem auto;
+            padding: 0 1rem;
+        }
+
+        .news-detail-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .news-detail-date { color: #666; }
+
+        .news-detail-tag {
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+            background-color: #e1f5fe;
+            color: #0277bd;
+        }
+
+        .news-detail-tag.press {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+
+        .news-detail h1 {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: #1a365d;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .news-detail-body {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #333;
+        }
+
+        .news-detail-body p { margin-bottom: 1.5rem; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0277bd;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">strobi Inc.</div>
+        <nav>
+            <ul>
+                <li><a href="toppage.html">Home</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="jellyfish.html">About Jellyfish</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="page-header">
+            <h1>News</h1>
+            <p>
+                <a href="toppage.html" style="color: #2b6cb0; text-decoration: none;">Home</a> /
+                <a href="news.html" style="color: #2b6cb0; text-decoration: none;">News</a> /
+                記事タイトル
+            </p>
+        </section>
+
+        <div class="news-detail">
+            <a href="news.html" class="back-link">← ニュース一覧に戻る</a>
+
+            <!-- ↓↓↓ ここから記事ごとに変える部分 ↓↓↓ -->
+
+            <div class="news-detail-meta">
+                <span class="news-detail-date">2026.03.13</span>
+                <span class="news-detail-tag">お知らせ</span>
+                <!-- プレスリリースの場合は↑を削除して↓を使う -->
+                <!-- <span class="news-detail-tag press">プレスリリース</span> -->
+            </div>
+
+            <h1>社名変更および本店移転のお知らせ</h1>
+
+            <div class="news-detail-body">
+                <p>この度、dixus株式会社は株式会社strobiに社名を変更いたしました。</p>
+                <p>また、本店を京都府京都市から東京都渋谷区に移転いたしました。</p>
+                <p>今後も、クラゲの大量発生問題に対するソリューションを提供してまいります。変わらぬご愛顧のほどよろしくお願い申し上げます。</p>
+            </div>
+
+            <!-- ↑↑↑ ここまで ↑↑↑ -->
+        </div>
+    </main>
+
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="toppage.html">Home</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="jellyfish.html">About Jellyfish</a></li>
+                <li><a href="photography.html">Photography</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; strobi Inc.</p>
+    </footer>
+</body>
+</html>
