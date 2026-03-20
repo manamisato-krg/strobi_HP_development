@@ -59,8 +59,8 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            max-width: 1100px; 
-            margin: 0 auto 5rem auto; 
+            max-width: 1100px;
+            margin: 0 auto 5rem auto;
         }
 
         .news-card {
@@ -80,9 +80,22 @@
             box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
 
+        .news-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .news-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
         .news-img-placeholder {
             width: 100%;
-            aspect-ratio: 16/9;
+            height: 200px;
             background-color: #e0e0e0;
             display: flex;
             align-items: center;
@@ -169,57 +182,7 @@
         </div>
 
         <div class="news-grid" id="news-grid">
-            
-            <a href="news/news-04.html" class="news-card" data-category="notice">
-                <div class="news-img-placeholder">[画像]</div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">2026.03.31</span>
-                        <span class="news-tag tag-notice">お知らせ</span>
-                    </div>
-                    <h3 class="news-title">社名変更および本店移転のお知らせ</h3>
-                </div>
-            </a>
-
-            <a href="news/news-03.html" class="news-card" data-category="notice">
-                <div class="news-img-wrapper">
-                    <img src="images_hp/VOIX-biz-logo-small.png" alt="VOIX Bizに掲載されました">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">2026.03.31</span>
-                        <span class="news-tag tag-notice">お知らせ</span>
-                    </div>
-                    <h3 class="news-title">くらげクラフト発売のリリースが、「VOIX Biz」に掲載されました</h3>
-                </div>
-            </a>
-
-            <a href="news/news-02.html" class="news-card" data-category="notice">
-                <div class="news-img-wrapper">
-                    <img src="images_hp/coki_new.jpg" alt="cokiに掲載されました">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">2026.03.31</span>
-                        <span class="news-tag tag-notice">お知らせ</span>
-                    </div>
-                    <h3 class="news-title">くらげクラフト発売のリリースが、サステナビリティ情報を紹介するWEBメディア cokiに掲載されました</h3>
-                </div>
-            </a>
-
-            <a href="news/news-01.html" class="news-card" data-category="press">
-                <div class="news-img-wrapper">
-                    <img src="images_hp/ser_kurage craft.jpg" alt="クラゲを使ったクラフトビール、くらげクラフトを発売しました">
-                </div>
-                <div class="news-content">
-                    <div class="news-meta">
-                        <span class="news-date">2026.03.31</span>
-                        <span class="news-tag tag-press">プレスリリース</span>
-                    </div>
-                    <h3 class="news-title">クラゲを使ったクラフトビール、くらげクラフトを発売しました</h3>
-                </div>
-            </a>
-
+            <!-- JavaScriptが自動で入れる -->
         </div>
 
     </main>
@@ -239,10 +202,32 @@
         <p class="copyright">&copy; strobi Inc.</p>
     </footer>
 
+    <script src="news-data.js"></script>
     <script>
+        // カードを自動生成
+        const grid = document.getElementById('news-grid');
+        newsData.forEach(item => {
+            const imageHtml = item.image
+                ? `<div class="news-img-wrapper"><img src="${item.image}" alt="${item.title}"></div>`
+                : `<div class="news-img-placeholder">[画像]</div>`;
+
+            grid.innerHTML += `
+                <a href="${item.url}" class="news-card" data-category="${item.category}">
+                    ${imageHtml}
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">${item.date}</span>
+                            <span class="news-tag tag-${item.category}">${item.tag}</span>
+                        </div>
+                        <h3 class="news-title">${item.title}</h3>
+                    </div>
+                </a>
+            `;
+        });
+
+        // フィルターボタン
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.filter-btn');
-            const cards = document.querySelectorAll('.news-card');
 
             buttons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -250,6 +235,7 @@
                     button.classList.add('active');
 
                     const filterValue = button.getAttribute('data-filter');
+                    const cards = document.querySelectorAll('.news-card');
 
                     cards.forEach(card => {
                         if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
