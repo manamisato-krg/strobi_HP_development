@@ -1,4 +1,4 @@
-/* ベース設定：ほんのり青みがかった背景色と深い海の色の文字 */
+/* ベース設定 */
 body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     line-height: 1.8;
@@ -8,24 +8,26 @@ body {
     background-color: #f4fafd;
 }
 
-/* ヘッダー・ナビゲーション：半透明なガラスのような質感 */
+/* ヘッダー */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
     background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(8px); /* 背景をぼかして透明感を演出 */
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(178, 219, 235, 0.5);
     position: sticky;
     top: 0;
     z-index: 100;
 }
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #0277bd;
 }
+
 nav ul {
     list-style: none;
     display: flex;
@@ -33,14 +35,49 @@ nav ul {
     margin: 0;
     padding: 0;
 }
+
 nav a {
     text-decoration: none;
     color: #2b6cb0;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
+
 nav a:hover {
     color: #81d4fa;
+}
+
+/* ハンバーガーボタン（スマホのみ表示） */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 200;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #0277bd;
+    transition: all 0.3s ease;
+}
+
+/* ハンバーガー × 変化 */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* セクション共通 */
@@ -50,11 +87,12 @@ section {
     margin: 0 auto;
     border-bottom: 1px solid rgba(178, 219, 235, 0.5);
 }
+
 h1 { font-size: 2rem; margin-top: 1.5rem; color: #01579b; }
 h2 { font-size: 1.8rem; margin-bottom: 2rem; color: #0277bd; }
 h3 { font-size: 1.2rem; margin: 1rem 0 0.5rem; color: #1565c0; }
 
-/* 画像プレースホルダー：水のような半透明ブルー */
+/* 画像プレースホルダー */
 .placeholder-image {
     background-color: rgba(129, 212, 250, 0.2);
     border: 1px solid rgba(129, 212, 250, 0.5);
@@ -89,7 +127,7 @@ h3 { font-size: 1.2rem; margin: 1rem 0 0.5rem; color: #1565c0; }
     margin-bottom: 4rem;
 }
 
-/* ボタン：浮遊感のある半透明ブルー */
+/* ボタン */
 .button {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -114,24 +152,95 @@ footer {
     text-align: center;
 }
 .footer-links {
+    list-style: none;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1.5rem;
     margin-bottom: 2rem;
+    padding: 0;
+}
+.footer-links a {
+    text-decoration: none;
+    color: #2b6cb0;
+    font-size: 0.9rem;
 }
 .copyright {
     font-size: 0.8rem;
     color: #4fc3f7;
 }
 
+/* ニュース画像 */
 .news-img-wrapper {
     width: 100%;
-    height: 200px; /* 高さを固定する */
+    height: 200px;
     overflow: hidden;
 }
-
 .news-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+/* ================================
+   レスポンシブ対応（768px以下）
+   ================================ */
+@media (max-width: 768px) {
+
+    /* ハンバーガーボタン表示 */
+    .hamburger {
+        display: flex;
+    }
+
+    /* ナビメニューをドロップダウン化 */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 150;
+        box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    }
+
+    nav.open {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    nav a {
+        font-size: 1.1rem;
+    }
+
+    /* セクション余白調整 */
+    section {
+        padding: 2.5rem 5%;
+    }
+
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.1rem; }
+
+    /* ニュースグリッドを1列に */
+    .news-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ボタン */
+    .button {
+        display: block;
+        text-align: center;
+    }
 }
