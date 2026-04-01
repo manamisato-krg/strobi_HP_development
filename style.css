@@ -189,10 +189,19 @@ footer {
     object-position: center;
 }
 
+.br-sp {
+    display: none;
+}
 /* ================================
    レスポンシブ対応（768px以下）
    ================================ */
 @media (max-width: 768px) {
+
+    /* ここに追加（メディアクエリの中） */
+    .br-sp {
+        display: inline;
+    }
+
 
     /* ハンバーガーボタン表示 */
     .hamburger {
