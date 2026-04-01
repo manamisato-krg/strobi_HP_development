@@ -6,7 +6,6 @@
     <title>strobi Inc. | Contact</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 全幅バナー用スタイル */
         .full-width-banner {
             width: 100vw;
             margin-left: calc(50% - 50vw);
@@ -26,7 +25,6 @@
             margin: 0;
         }
 
-        /* お問い合わせフォーム用スタイル */
         .contact-form {
             max-width: 700px;
             margin: 0 auto 5rem auto;
@@ -62,6 +60,7 @@
             border-radius: 4px;
             font-size: 1rem;
             font-family: inherit;
+            box-sizing: border-box;
         }
 
         .form-group input:focus,
@@ -111,7 +110,7 @@
             <div class="full-width-banner">
                 <h2>お問い合わせ</h2>
             </div>
-            
+
             <div style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                 <p style="font-size: 1.1rem; line-height: 1.8;">
                     事業に関するお問い合わせ、共同開発やユーザーテストのご相談など、<br>お気軽にご連絡ください。通常、数営業日以内に返信いたします。
@@ -119,8 +118,8 @@
             </div>
         </section>
 
-        <form action="#" method="post" class="contact-form">
-            
+        <form action="https://formspree.io/f/maqlbyev" method="post" class="contact-form">
+
             <div class="form-group">
                 <label for="name">氏名 <span class="required-mark">※必須</span></label>
                 <input type="text" id="name" name="name" required placeholder="例：海洋 太郎">
@@ -149,7 +148,6 @@
             <button type="submit" class="submit-btn">送信する</button>
 
         </form>
-
     </main>
 
     <footer>
