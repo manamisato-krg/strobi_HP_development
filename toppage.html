@@ -144,16 +144,26 @@
             `;
         });
     </script>
+    <button class="floating-menu-btn" id="floating-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
     <script>
         const hamburger = document.getElementById('hamburger');
+        const floatingBtn = document.getElementById('floating-btn');
         const nav = document.getElementById('nav');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
+
+        function toggleMenu() {
             nav.classList.toggle('open');
-        });
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        floatingBtn.addEventListener('click', toggleMenu);
+
         document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-                hamburger.classList.remove('open');
+            if (!nav.contains(e.target) && !hamburger.contains(e.target) && !floatingBtn.contains(e.target)) {
                 nav.classList.remove('open');
             }
         });

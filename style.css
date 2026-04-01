@@ -199,6 +199,10 @@ footer {
     gap: 3rem;
     margin-bottom: 4rem;
 }
+
+.floating-menu-btn {
+    display: none;
+}
 /* ================================
    レスポンシブ対応（768px以下）
    ================================ */
@@ -214,6 +218,32 @@ footer {
     }
 
 
+.floating-menu-btn {
+display: flex;
+position: fixed;
+bottom: 1.5rem;
+right: 1.5rem;
+width: 50px;
+height: 50px;
+background-color: #0277bd;
+border-radius: 50%;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+border: none;
+box-shadow: 0 4px 12px rgba(2, 119, 189, 0.4);
+z-index: 200;
+flex-direction: column;
+gap: 5px;
+}
+
+.floating-menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+}
+    
     /* ハンバーガーボタン表示 */
     .hamburger {
         display: flex;
