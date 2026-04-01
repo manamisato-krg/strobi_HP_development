@@ -90,20 +90,25 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">strobi Inc.</div>
-        <nav>
-            <ul>
-                <li><a href="toppage.html">Home</a></li>
-                <li><a href="service.html">Service</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="jellyfish.html">About Jellyfish</a></li>
-                <li><a href="photography.html">Photography</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div class="logo">strobi Inc.</div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav id="nav">
+        <ul>
+            <li><a href="toppage.html">Home</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="jellyfish.html">About Jellyfish</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main>
         <section id="contact-overview">
@@ -164,5 +169,21 @@
         </nav>
         <p class="copyright">&copy; strobi Inc.</p>
     </footer>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        nav.classList.toggle('open');
+    });
+    // メニュー外をクリックしたら閉じる
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+            hamburger.classList.remove('open');
+            nav.classList.remove('open');
+        }
+    });
+</script>
+
 </body>
 </html>
