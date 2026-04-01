@@ -192,6 +192,13 @@ footer {
 .br-sp {
     display: none;
 }
+
+.grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
 /* ================================
    レスポンシブ対応（768px以下）
    ================================ */
@@ -200,6 +207,10 @@ footer {
     /* ここに追加（メディアクエリの中） */
     .br-sp {
         display: inline;
+    }
+
+    .grid-2col {
+    grid-template-columns: 1fr;
     }
 
 
