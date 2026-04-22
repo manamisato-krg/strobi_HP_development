@@ -6,15 +6,16 @@ const newsData = [
         summary: "この度、strobi Inc.はuTIE connect 会員企業となりました。",
         url: "news/news-05.html",
         category: "notice",
-        image: "images_hp/uTIE_connect.webp"  // 画像なしの場合は空のまま
-        
+        image: "images_hp/uTIE_connect.webp"
+    },
+    {
         date: "2026.03.31",
         tag: "お知らせ",
         title: "社名変更および本店移転のお知らせ",
         summary: "この度、strobi Inc.は社名変更および本店移転をいたしました。",
         url: "news/news-04.html",
         category: "notice",
-        image: ""  // 画像なしの場合は空のまま
+        image: ""
     },
     {
         date: "2026.03.31",
