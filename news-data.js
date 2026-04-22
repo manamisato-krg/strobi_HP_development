@@ -1,5 +1,13 @@
 const newsData = [
     {
+        date: "2026.04.22",
+        tag: "お知らせ",
+        title: "uTIE connect 入会のお知らせ",
+        summary: "この度、strobi Inc.はuTIE connect 会員企業となりました。",
+        url: "news/news-04.html",
+        category: "notice",
+        image: ""  // 画像なしの場合は空のまま
+        
         date: "2026.03.31",
         tag: "お知らせ",
         title: "社名変更および本店移転のお知らせ",
